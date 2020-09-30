@@ -29,6 +29,7 @@ module Das412CapstoneMod1
 
     Mongoid.load!('./config/mongoid.yml')
     config.generators { |g| g.orm :active_record }
+    # config.generators { |g| g.orm :mongoid }
 
     # see initializers/cors.rb
 

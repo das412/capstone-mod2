@@ -5,43 +5,42 @@ RSpec.describe "ApiDevelopments", type: :request do
     JSON.parse(response.body)
   end
   describe "RDBMS-backed" do
-    before(:each) { Foo.delete_all }
-    after(:each) { Foo.delete_all }
+    before(:each) { City.delete_all }
+    after(:each) { City.delete_all }
 
     it "creates RDBMS-backed model" do
-      object = Foo.create(name: "test")
-      expect(Foo.find(object.id).name).to eq("test")
+      object = City.create(name: "Baltimore")
+      expect(City.find(object.id).name).to eq("Baltimore")
     end
 
     it "creates RDBMS-backed API resource" do
-      object = Foo.create(name: "test")
-      get foo_path(object.id)
-      expect(foos_path).to eq("/api/foos")
+      object = City.create(name: "Baltimore")
+      get city_path(object.id)
+      expect(cities_path).to eq("/api/cities")
 
       expect(response).to have_http_status(:ok)
-      expect(parsed_body["name"]).to eq("test")
+      expect(parsed_body["name"]).to eq("Baltimore")
     end
 
   end
   describe "MongoDB-backed" do
-    before(:each) { Bar.delete_all }
-    after(:each) { Bar.delete_all }
+    before(:each) { State.delete_all }
+    after(:each) { State.delete_all }
 
     it "creates MongoDB-backed model" do
-      object = Bar.create(name: "test")
-      expect(Bar.find(object.id).name).to eq("test")
+      object = State.create(name: "Maryland")
+      expect(State.find(object.id).name).to eq("Maryland")
     end
 
     it "creates MongoDB-backed API resource" do
-      object = Bar.create(name: "test")
-      get bar_path(object.id)
-      expect(bars_path).to eq("/api/bars")
+      object = State.create(name: "Maryland")
+      get state_path(object.id)
+      expect(states_path).to eq("/api/states")
 
       expect(response).to have_http_status(:ok)
-      expect(parsed_body["name"]).to eq("test")
+      expect(parsed_body["name"]).to eq("Maryland")
       expect(parsed_body).to include("created_at")
       # byebug
-      expect(parsed_body).to include("name"=>object.id.to_s)
     end
   end
 end

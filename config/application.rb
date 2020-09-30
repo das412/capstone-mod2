@@ -27,20 +27,10 @@ module Das412CapstoneMod1
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    # Mongoid.load!('./config/mongoid.yml')
-    # config.generators { |g| g.orm :active_record }
-    # config.generators { |g| g.orm :mongoid }
+    Mongoid.load!('./config/mongoid.yml')
+    config.generators { |g| g.orm :active_record }
 
     # see initializers/cors.rb
-    # config.middleware.insert_before 0, Rack::Cors do
-    #   allow do
-    #     origins '*'
-    #
-    #     resource '/api/*',
-    #     headers: :any,
-    #     methods: %i(get post put delete options)
-    #   end
-    # end
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.

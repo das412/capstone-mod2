@@ -1,6 +1,6 @@
 # COURSERA CAPSTONE COURSE -- MODULE 1 ASSIGNMENT
 
-* das412 <sean.genell@nimbleinc.net>
+* das412 <sean.genell@gmail.com>
 
 * Ruby 5.2.1
 * Ruby 5.2.4.4

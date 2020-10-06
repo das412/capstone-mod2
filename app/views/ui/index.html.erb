@@ -1,11 +1,19 @@
-Capstone Module 1 Assignment Site Under Construction -- check back soon
+<!DOCTYPE html>
+<html lang="en" ng-app="city-spa">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "city-spa", :media => "all" %>
+    <%= javascript_include_tag "city-spa" %>
+  </head>
+  <body>
 
-<!-- <br />
-<br />
+    <div class="container">
+      <!-- <h1>Hello</h1>
+      <span>(from app/views/ui/index.html.erb)</span> -->
+      <div ui-view></div>
+    </div>
 
-<%#= link_to "Cities URL", "/api/cities" %>
-
-<br />
-<br />
-
-<%#= link_to "States URL", "/api/states" %> -->
+  </body>
+</html>
